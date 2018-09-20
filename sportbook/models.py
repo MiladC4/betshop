@@ -3,6 +3,10 @@ from django.db.models.signals import pre_save, post_save, m2m_changed
 from django.dispatch import receiver
 
 
+class OddsManager(models.Manager):
+    def get_all_active(self):
+        self.get_queryset().filter(status=0)
+
 class MlbOdds(models.Model):
     BET_TYPES = (
         ('hS', 'Home Spread'),
@@ -24,6 +28,9 @@ class MlbOdds(models.Model):
     type = models.CharField(max_length=2, choices=BET_TYPES)
     price = models.IntegerField()
     status = models.IntegerField(choices=STATUS_OPTIONS, default=0)
+
+    objects = models.Manager()
+    active_objects = OddsManager()
 
     def __str__(self):
         return "{} Type: {}".format(self.home, self.type)

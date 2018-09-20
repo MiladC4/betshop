@@ -31,6 +31,7 @@ class BetSlipManager(models.Manager):
         return self.model.objects.create(user=user_obj)
 
 
+
 class Slip(models.Model):
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     odds = models.ManyToManyField(MlbOdds, blank=True)
@@ -45,6 +46,39 @@ class Slip(models.Model):
 
     def __str__(self):
         return str(self.pk)
+
+    def add_or_remove_odd(self, odds_obj):
+        if odds_obj in self.odds.all():
+            self.odds.remove(odds_obj)
+            added = False
+        else:
+            self.odds.add(odds_obj)
+            added = True
+        return added
+
+    def add_or_remove_prod(self, prod_obj):
+        if prod_obj in self.products.all():
+            self.products.remove(prod_obj)
+            added = False
+        else:
+            self.products.add(prod_obj)
+            added = True
+        return added
+
+    def calc_min_price(self):
+        if self.odds.count == 0:
+            min_price = -10000
+        elif self.odds.count() == 5:
+            min_price = 10000
+        else:
+            cnt = Decimal(1 / int(5 - self.odds.count()))
+            max_divider = (20 / self.divider) ** (cnt)
+            if max_divider < 2:
+                min_price = -100 / (max_divider - 1)
+            else:
+                min_price = (max_divider - 1) * 100
+        return min_price
+
 
 
 def m2m_changed_slip_receiver(sender, instance, action, *args, **kwargs):
@@ -93,12 +127,20 @@ class PlaceBetManager(models.Manager):
 
 
 class PlacedBet(models.Model):
+    STATUS_OPTIONS = (
+        (0, 'active'),
+        (1, 'lose'),
+        (2, 'win')
+    )
+
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    odds = models.ManyToManyField(MlbOdds)
+    odds = models.ManyToManyField(MlbOdds, through="BetValue")
     products = models.ManyToManyField(Product)
     divider = models.DecimalField(default=0.00, max_digits=10, decimal_places=2)
+    sum_odds = models.DecimalField(default=0.00, max_digits=10, decimal_places=2)
     placed = models.DateTimeField(auto_now=True)
     value = models.DecimalField(default=0.00, max_digits=100, decimal_places=2)
+    status = models.IntegerField(choices=STATUS_OPTIONS, default=0)
 
     def __str__(self):
         return "{}: Value: {}".format(self.user, self.value)
@@ -112,10 +154,18 @@ class PlacedBet(models.Model):
                                         value=slip_obj.total,
                                         divider=slip_obj.divider)
         for odd in slip_obj.odds.all():
-            new_placed.odds.add(odd)
+            BetValue.objects.create(placed_bet=new_placed, odd=odd, value=0)
             slip_obj.odds.remove(odd)
         for prod in slip_obj.products.all():
             new_placed.products.add(prod)
             slip_obj.products.remove(prod)
         return
 
+
+class BetValue(models.Model):
+    placed_bet = models.ForeignKey(PlacedBet, on_delete=models.CASCADE)
+    odd = models.ForeignKey(MlbOdds, on_delete=models.CASCADE)
+    value = models.DecimalField(default=0.00, max_digits=100, decimal_places=2)
+
+    def __str__(self):
+        return "{}, Value: {}".format(self.odd, self.value)
