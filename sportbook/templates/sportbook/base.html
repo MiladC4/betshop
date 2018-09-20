@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+
+    <title>Shop Bet</title>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+
+</head>
+<body>
+
+<!-- Nav bar -->
+<nav class="navbar  fixed-top navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'betslip:home' %}">Betslip <span class="betslip-span">{{ request.session.slip_odds }} ${{ request.session.slip_due }}</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Sports Book
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'sportbook:mlb' %}">MLB</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Sign Up</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Shop Here
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'shop:index' %}">Shop</a>
+                    <a class="dropdown-item" href="#">#</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+
+
+        </ul>
+
+        {% if user.is_authenticated %}
+        <div class="dropdown dropleft">
+            <button class="btn btn-secondary btn-small dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ user.username }} (${{ user.account.balance }})
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{% url 'account:user_logout' %}">Logout</a>
+                <a class="dropdown-item" href="/account/{{ user.account.id }}">Edit Account Info</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+        {% else %}
+        <form class="form-inline my-2 my-lg-0" action="{% url 'sportbook:base' %}" method="POST">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" id="username" name="username" type="text" placeholder="Username"
+                   aria-label="Search">
+            <input class="form-control mr-sm-2" id="password" name="password" type="password" placeholder="Password"
+                   aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign In</button>
+        </form>
+        {% endif %}
+    </div>
+</nav>
+
+<!-- Jumbotron -->
+<div class="jumbotron jumbo-top" id="top-jumbo">
+    <h1 class="display-4" id="disp-4">Welcome to Shop bet!</h1>
+    <p class="lead" id="lead">Win real items by picking winners!</p>
+    <hr class="my-4">
+    {% if user.is_anonymous %}
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'account:signup' %}" role="button">Sign Up!</a>
+    </p>
+    {% endif %}
+</div>
+
+
+{% block body_block %}
+
+{% endblock %}
+<!-- Footer -->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Created and maintained by Joe Ballard</h1>
+        <p class="lead">ballard.joe33@gmail.com</p>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        var betForm = $(".form-betslip-ajax")
+
+        betForm.submit(function(event){
+            event.preventDefault();
+            console.log("form did not send")
+            var thisForm = $(this)
+            var actionEndpoint = thisForm.attr("action");
+            var httpMethod = thisForm.attr("method");
+            var formData = thisForm.serialize();
+
+            $.ajax({
+                url: actionEndpoint,
+                method: httpMethod,
+                data: formData,
+                success: function(data){
+                    var slipOdds = $(".betslip-span")
+                    slipOdds.text(data.slipOdds + " $" + data.slipDue)
+                },
+                error: function(errorData){
+                    console.log(errorData)
+                }
+            })
+        })
+
+        var betForm = $(".form-parley-ajax");
+
+        betForm.submit(function(event){
+            event.preventDefault();
+            var thisForm = $(this);
+            var actionEndpoint = thisForm.attr("action");
+            var httpMethod = thisForm.attr("method");
+            var formData = thisForm.serialize();
+
+            $.ajax({
+                url: actionEndpoint,
+                method: httpMethod,
+                data: formData,
+                dataType: 'json',
+                success: function(data){
+                    var slipOdds = $(".betslip-span")
+                    var options, index, select, option;
+
+                    slipOdds.text(data.slipOdds + " $" + data.slipDue);
+                    select = document.getElementById('bet_id');
+                    select.options.length = 0;
+
+                    dataBet = JSON.parse(data.oddsRemain); // Or whatever source information you're working with
+                    for (i = 0; i < dataBet.length; i++) {
+                        option = dataBet[i];
+                        select.options.add(new Option(option.fields.price, option.pk));
+                    };
+
+                    dataSlipBets = JSON.parse(data.slipBets);
+                    var slipTableHtml = ""
+                    var tableBet, table, betNumb
+                    table = document.getElementById('slip-table-body')
+                    for (i = 0; i < dataSlipBets.length; i++) {
+                        betNumb = i + 1
+                        tableBet = dataSlipBets[i]
+                        slipTableHtml += "<tr><th scope='row'>" + betNumb +"</th><td><a href='#'>" + tableBet.fields.home + ": " + tableBet.fields.type + "</a></td><td>" + tableBet.fields.price + "</td></tr>"
+                        $('#slip-table-body').html(slipTableHtml)
+                    };
+
+                },
+                error: function(errorData){
+                    console.log(errorData)
+                }
+            });
+        });
+
+
+    });
+
+
+</script>
+
+
+</body>
+</html>

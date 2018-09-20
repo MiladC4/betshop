@@ -1,0 +1,17 @@
+{% extends 'sportbook/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+<div class="container">
+    {% if products %}
+        {% for product in products %}
+            <form class="form-betslip-ajax" method="POST" action="{% url 'betslip:update' %}">{% csrf_token %}
+                <input type="hidden" name="prod_id" value="{{ product.id }}">
+                <button type="submit" class="btn btn-outline-success bet-button">{{ product.title }} ${{ product.price }}</button>
+            </form>
+        {% endfor %}
+    {% else %}
+    <p>Error</p>
+    {% endif %}
+</div>
+
+{% endblock %}
