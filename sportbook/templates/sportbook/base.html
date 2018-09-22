@@ -65,7 +65,6 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{% url 'shop:index' %}">Shop</a>
-                    <a class="dropdown-item" href="#">#</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
@@ -83,7 +82,7 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="{% url 'account:user_logout' %}">Logout</a>
                 <a class="dropdown-item" href="/account/{{ user.account.id }}">Edit Account Info</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="{% url 'account:active_bets' %}">Active Bets</a>
             </div>
         </div>
         {% else %}

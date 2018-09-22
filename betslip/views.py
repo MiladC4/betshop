@@ -77,8 +77,8 @@ def parley_update(request):
         request.session['slip_odds'] = str(round(slip_obj.divider, 2))
         request.session['slip_due'] = str(round(slip_obj.due, 2))
         if request.is_ajax:
-            min_price = slip_obj.calc_min_price
-            odds_list = serialize('json', MlbOdds.active_objects.filter(price__gte=min_price))
+            min_price = slip_obj.calc_min_price()
+            odds_list = serialize('json', MlbOdds.objects.filter(price__gte=min_price))
             bets = serialize('json', slip_obj.odds.all())
             json_data = {
                 "added": added,

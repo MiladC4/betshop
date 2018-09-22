@@ -1,0 +1,31 @@
+{% extends 'sportbook/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+<div class="container">
+    {% if placed_bets %}
+    {% for bets in placed_bets %}
+    <table class="table">
+        <thead>
+            <th scope="col">Bet</th>
+            <th scope="col">Odds</th>
+            <th scope="col">Total</th>
+        </thead>
+        {% for odd in bets.odds.all %}
+        <tr>
+            <td>{{ odd }}</td>
+            <td>{{ odd.price }}</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td>{{ bets.value }}</td>
+        </tr>
+    </table>
+    {% endfor %}
+    {% endif %}
+</div>
+
+
+{% endblock %}

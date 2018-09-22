@@ -1,20 +1,22 @@
 from django.db import models
 from django.db.models.signals import pre_save, post_save, m2m_changed
 from django.dispatch import receiver
+from decimal import Decimal
 
 
 class OddsManager(models.Manager):
     def get_all_active(self):
         self.get_queryset().filter(status=0)
 
+
 class MlbOdds(models.Model):
     BET_TYPES = (
-        ('hS', 'Home Spread'),
-        ('aS', 'Away Spread'),
-        ('hL', 'Home Line'),
-        ('aL', 'Away Line'),
-        ('O', 'Over'),
-        ('U', 'Under'),
+        ('h_sprd', 'Home Spread'),
+        ('a_sprd', 'Away Spread'),
+        ('h_line', 'Home Line'),
+        ('a_line', 'Away Line'),
+        ('over', 'Over'),
+        ('under', 'Under'),
     )
 
     STATUS_OPTIONS = (
@@ -35,6 +37,20 @@ class MlbOdds(models.Model):
     def __str__(self):
         return "{} Type: {}".format(self.home, self.type)
 
+    def get_multiplier(self):
+        multiplier = Decimal(0)
+        if self.price > 0:
+            multiplier = Decimal(self.price / 100 + 1)
+        else:
+            multiplier = Decimal(100 / (self.price * -1) + 1)
+        return multiplier
+
+    def get_event_status(self):
+        name = self.type
+        event = getattr(self, name)
+        status = event.live_status
+        return status
+
 
 class MlbGame(models.Model):
     LIVE_STATUS_OPTIONS = (
@@ -43,6 +59,7 @@ class MlbGame(models.Model):
         (2, 'complete')
     )
     game_id = models.CharField(primary_key=True, max_length=100)
+    start_time = models.DateTimeField()
     home = models.CharField(max_length=100)
     away = models.CharField(max_length=100)
     h_sprd = models.OneToOneField(MlbOdds, on_delete=models.CASCADE, related_name='h_sprd', null=True)

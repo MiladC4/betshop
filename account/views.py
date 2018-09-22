@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from . import models
+from betslip.models import PlacedBet
 
 
 # Create your views here.
@@ -82,3 +83,13 @@ class AccountDetailView(DetailView):
     context_object_name = 'account_detail'
     model = models.AccountInfo
     template_name = 'account/account_detail.html'
+
+
+def active_bets(request):
+    user = request.user
+    placed_bets = PlacedBet.objects.filter(user=user)
+    bet_dict = {
+        'placed_bets': placed_bets
+    }
+    return render(request, 'account/active_bets.html', bet_dict)
+

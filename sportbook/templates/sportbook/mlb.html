@@ -7,10 +7,10 @@
 
     <table class="table">
         <thead>
-            <th scope="col">Team</th>
-            <th scope="col">Money</th>
-            <th scope="col">Run Line</th>
-            <th scope="col">Total</th>
+        <th scope="col">Team</th>
+        <th scope="col">Money</th>
+        <th scope="col">Run Line</th>
+        <th scope="col">Total</th>
         </thead>
 
         <tr>
@@ -24,13 +24,15 @@
             <td>
                 <form class="form-betslip-ajax" method="POST" action="{% url 'betslip:update' %}">{% csrf_token %}
                     <input type="hidden" name="bet_id" value="{{ game.h_sprd.odd_id }}">
-                    <button type="submit" class="btn btn-outline-success bet-button">{{ game.handicap }} ({{ game.h_sprd.price }})</button>
+                    <button type="submit" class="btn btn-outline-success bet-button">{{ game.handicap }} ({{ game.h_sprd.price }})
+                    </button>
                 </form>
             </td>
             <td>
                 <form class="form-betslip-ajax" method="POST" action="{% url 'betslip:update' %}">{% csrf_token %}
                     <input type="hidden" name="bet_id" value="{{ game.under.odd_id }}">
-                    <button type="submit" class="btn btn-outline-success bet-button">u{{ game.total }} ({{ game.under.price }})</button>
+                    <button type="submit" class="btn btn-outline-success bet-button">u{{ game.total }} ({{ game.under.price }})
+                    </button>
                 </form>
             </td>
 
@@ -46,13 +48,15 @@
             <td>
                 <form class="form-betslip-ajax" method="POST" action="{% url 'betslip:update' %}">{% csrf_token %}
                     <input type="hidden" name="bet_id" value="{{ game.a_sprd.odd_id }}">
-                    <button type="submit" class="btn btn-outline-success bet-button">{{ game.handicap }} ({{ game.a_sprd.price }})</button>
+                    <button type="submit" class="btn btn-outline-success bet-button">{{ game.handicap }} ({{ game.a_sprd.price }})
+                    </button>
                 </form>
             </td>
             <td>
                 <form class="form-betslip-ajax" method="POST" action="{% url 'betslip:update' %}">{% csrf_token %}
                     <input type="hidden" name="bet_id" value="{{ game.over.odd_id }}">
-                    <button type="submit" class="btn btn-outline-success bet-button">o{{ game.total }} ({{ game.over.price }})</button>
+                    <button type="submit" class="btn btn-outline-success bet-button">o{{ game.total }} ({{ game.over.price }})
+                    </button>
                 </form>
             </td>
 

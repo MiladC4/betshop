@@ -73,7 +73,7 @@
                 <label for="bet_id">Select list:</label>
                 <select class="form-control" id="bet_id" name="bet_id">
                     {% for odd in odds %}
-                    <option value="{{ odd.odd_id }}">{{ odd.price }}</option>
+                    <option value="{{ odd.odd_id }}">{{ odd }}  {{ odd.price }}</option>
                     {% endfor %}
                 </select>
                 <button type="submit" class="btn btn-outline-success bet-button">Add Game</button>
