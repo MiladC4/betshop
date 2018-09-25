@@ -6,3 +6,4 @@ from .models import *
 admin.site.register(Slip)
 admin.site.register(PlacedBet)
 admin.site.register(BetValue)
+admin.site.register(StraightBet)

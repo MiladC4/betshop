@@ -22,6 +22,7 @@ $(document).ready(function(){
                     betNumb = i + 1
                     tableBet = dataSlipBets[i]
                     slipBetsHtml += "<tr><th scope='row'>" + betNumb +"</th><td><a href='#'>" + tableBet.fields.home + ": " + tableBet.fields.type + "</a></td><td>" + tableBet.fields.price + "</td></tr>"
+                    slipBetsHtml += "<tr><td></td><th scope='row'><input type='number' min='0.01' step='0.01' class='form-control mr-sm-2' id=" + tableBet.pk + " name=" + tableBet.pk + " placeholder=Amount></th></tr>"
                     $('#slip-table-body').html(slipBetsHtml)
                 };
             },
@@ -80,4 +81,5 @@ $(document).ready(function(){
     $('[data-toggle="offcanvas"]').click(function () {
         $('.row-offcanvas').toggleClass('active')
     });
+
 });

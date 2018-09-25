@@ -104,3 +104,26 @@ def submit_bet(request):
         return redirect('betslip:home')
     PlacedBet.convert_slip(slip_obj)
     return redirect('betslip:home')
+
+
+def submit_straight_bets(request):
+    if not request.user.is_authenticated:
+        return redirect('sportbook:mlb')
+    slip_obj, new_obj = Slip.objects.new_or_get(request)
+    if not new_obj:
+        odds = slip_obj.odds.all()
+        total_due = 0
+        # Check account Balance and Max Bet #
+        for odd in odds:
+            total_due += Decimal(request.POST.get(odd.pk))
+        if total_due > slip_obj.user.account.balance:
+            return redirect('sportbook:mlb')
+        # Create Bets,
+        for odd in odds:
+            due = Decimal(request.POST.get(odd.pk))
+            StraightBet.submit_straight_bet(odd, due, slip_obj.user)
+            account = slip_obj.user.account
+            account.balance = Decimal(account.balance - due)
+            account.save()
+            slip_obj.odds.remove(odd)
+    return redirect('account:active_bets')

@@ -142,6 +142,7 @@ class PlacedBet(models.Model):
     def __str__(self):
         return "{}: Value: {}".format(self.user, self.value)
 
+
     @classmethod
     def convert_slip(cls, slip_obj):
         price_sum = 0
@@ -161,6 +162,31 @@ class PlacedBet(models.Model):
         for prod in slip_obj.products.all():
             new_placed.products.add(prod)
             slip_obj.products.remove(prod)
+
+
+class StraightBet(models.Model):
+    STATUS_OPTIONS = (
+        (0, 'active'),
+        (1, 'lose'),
+        (2, 'win')
+    )
+
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    odd = models.ForeignKey(MlbOdds, on_delete=models.DO_NOTHING)
+    placed = models.DateTimeField(auto_now=True)
+    due = models.DecimalField(default=0.00, max_digits=100, decimal_places=2)
+    value = models.DecimalField(default=0.00, max_digits=100, decimal_places=2)
+    status = models.IntegerField(choices=STATUS_OPTIONS, default=0)
+
+    def __str__(self):
+        return "{}: Risk: {} To Win: {}".format(self.odd, self.due, self.value)
+
+    @classmethod
+    def submit_straight_bet(cls, odd, due, user):
+        if not odd.get_event_status() == 0 or due > 100:
+            return False
+        value = Decimal(odd.get_multiplier() * due)
+        cls.objects.create(user=user, odd=odd, due=due, value=value)
 
 
 class BetValue(models.Model):

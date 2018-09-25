@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8">
-        {% timezone "America/New_York" %}
+        {% timezone "America/Chicago" %}
         {% if games %}
         {% for game in games %}
 
@@ -73,22 +73,28 @@
     </div>
     <div class="col-sm-4" id="bets">
         <h1>Bet Slip</h1>
-            <h2>
-                <span id="betslip-span">{{ request.session.slip_odds }} ${{ request.session.slip_due }}</span>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Bet</th>
-                            <th>Odds</th>
-                        </tr>
-                    </thead>
-                    <tbody id="slip-table-body"></tbody>
-                    <tr>
+        <form class="submit-betslip" method="POST" action="{% url 'betslip:submit_straight_bets' %}">{% csrf_token %}
+        <span id="betslip-span">{{ request.session.slip_odds }} ${{ request.session.slip_due }}</span>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Bet</th>
+                    <th>Odds</th>
+                </tr>
+            </thead>
+            <tbody id="slip-table-body">
+                {% for odd in slip.odds.all %}
+                <tr><th scope='row'></th>
+                    <td><a href='#'>{{ odd.home }}: {{ odd.type }}</a></td>
+                    <td>{{ odd.price }}</td></tr>
+                <tr><td></td><th scope='row'><input type='number' min='0.01' step='0.01' class='form-control mr-sm-2' id="{{ odd.odd_id }}" name="{{ odd.odd_id }}" placeholder=Amount></th></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-success">Submit</button>
+        </form>
 
-                    </tr>
-                </table>
-            </h2>
     </div>
     {% endtimezone %}
     </div>

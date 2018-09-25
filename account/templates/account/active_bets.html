@@ -25,6 +25,24 @@
     </table>
     {% endfor %}
     {% endif %}
+    {% if straight_bets %}
+
+    <table class="table">
+        <thead>
+            <th scope="col">Bet</th>
+            <th scope="col">Odds</th>
+            <th scope="col">Total</th>
+        </thead>
+        {% for bet in straight_bets %}
+        <tr>
+            <td>{{ bet.odd }}</td>
+            <td>{{ bet.odd.price }}</td>
+            <td>{{ bet.due }} => To Win: {{ bet.value }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
 </div>
 
 
