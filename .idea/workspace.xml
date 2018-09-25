@@ -2,22 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81fdc348-9d9b-4cfb-a029-f3a1d4a56d7b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/account/templates/account/active_bets.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/GeoIP.dat.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/GeoLiteCity.dat.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/GeoLiteCityv6.dat.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/css.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/betslip/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/betslip/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/betslip/templates/betslip/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/betslip/templates/betslip/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/templates/account/active_bets.html" beforeDir="false" afterPath="$PROJECT_DIR$/account/templates/account/active_bets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/betshop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/betshop/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/betslip/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/betslip/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pop_betshop.py" beforeDir="false" afterPath="$PROJECT_DIR$/pop_betshop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportbook/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sportbook/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sportbook/templates/sportbook/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/sportbook/templates/sportbook/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sportbook/templates/sportbook/mlb.html" beforeDir="false" afterPath="$PROJECT_DIR$/sportbook/templates/sportbook/mlb.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/account_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/account/templates/account/account_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/accountinfo_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/account/templates/account/accountinfo_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/account/templates/account/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/user_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/account/templates/account/user_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/ajax.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,136 +28,80 @@
     <favorites_list name="betshop" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/sportbook/models.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="61" column="39" lean-forward="true" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/betshop/settings.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1034">
-                  <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/betslip/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-289">
-                  <caret line="30" selection-start-line="30" selection-end-line="30" />
-                  <folding>
-                    <element signature="e#0#45#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/account/urls.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-                  <folding>
-                    <element signature="e#0#32#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/account/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1564">
-                  <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
-                  <folding>
-                    <element signature="e#0#35#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="pop_betshop.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pop_betshop.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="22" selection-start-line="22" selection-end-line="22" />
-                  <folding>
-                    <element signature="e#0#9#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="active_bets.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/account/templates/account/active_bets.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/json/__init__.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="5967">
-                  <caret line="353" selection-start-line="353" selection-end-line="353" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/betslip/models.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="321">
-                  <caret line="143" selection-start-line="143" selection-end-line="143" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="mlb.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sportbook/templates/sportbook/mlb.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="850">
-                  <caret line="50" column="109" selection-start-line="50" selection-start-column="109" selection-end-line="50" selection-end-column="109" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sportbook/templates/sportbook/base.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1190">
-                  <caret line="97" column="10" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
-                  <folding>
-                    <element signature="n#head#0;n#html#0;n#!!top" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/betslip/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-64">
+              <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajax.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/ajax.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-17">
+              <caret line="23" column="203" lean-forward="true" selection-start-line="23" selection-start-column="203" selection-end-line="23" selection-end-column="203" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mlb.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sportbook/templates/sportbook/mlb.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="491">
+              <caret line="87" selection-start-line="87" selection-end-line="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sportbook/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/betslip/templates/betslip/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="66" column="17" lean-forward="true" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sportbook/templates/sportbook/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -174,8 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/school/urls.py" />
-        <option value="$PROJECT_DIR$/school/templates/school/school_confirm_delete.html" />
         <option value="$PROJECT_DIR$/account/admin.py" />
         <option value="$PROJECT_DIR$/account/forms.py" />
         <option value="$PROJECT_DIR$/templates/sportbook/index.html" />
@@ -196,43 +136,44 @@
         <option value="$PROJECT_DIR$/templates/testfk/index.html" />
         <option value="$PROJECT_DIR$/testfk/models.py" />
         <option value="$PROJECT_DIR$/templates/sportbook/mlb.html" />
-        <option value="$PROJECT_DIR$/templates/sidebar.html" />
         <option value="$PROJECT_DIR$/templates/account/accountinfo_form.html" />
         <option value="$PROJECT_DIR$/shop/admin.py" />
         <option value="$PROJECT_DIR$/shop/views.py" />
         <option value="$PROJECT_DIR$/shop/urls.py" />
         <option value="$PROJECT_DIR$/shop/templates/shop/index.html" />
-        <option value="$PROJECT_DIR$/static/js/ajax.js" />
-        <option value="$PROJECT_DIR$/static/css/styles.css" />
         <option value="$PROJECT_DIR$/sportbook/views.py" />
         <option value="$USER_HOME$/django/djangofirst/longshots/pop_first_app.py" />
         <option value="$PROJECT_DIR$/holder.py" />
         <option value="$PROJECT_DIR$/betshop/urls.py" />
         <option value="$PROJECT_DIR$/account/models.py" />
         <option value="$PROJECT_DIR$/betslip/urls.py" />
-        <option value="$PROJECT_DIR$/betshop/settings.py" />
         <option value="$PROJECT_DIR$/shop/models.py" />
         <option value="$PROJECT_DIR$/betslip/admin.py" />
         <option value="$PROJECT_DIR$/betslip/templates/betslip/home.html" />
-        <option value="$PROJECT_DIR$/betslip/views.py" />
         <option value="$PROJECT_DIR$/templates/account/account_detail.html" />
         <option value="$PROJECT_DIR$/templates/account/active_bets.html" />
         <option value="$PROJECT_DIR$/account/urls.py" />
-        <option value="$PROJECT_DIR$/sportbook/templates/sportbook/base.html" />
-        <option value="$PROJECT_DIR$/sportbook/templates/sportbook/mlb.html" />
         <option value="$PROJECT_DIR$/account/views.py" />
-        <option value="$PROJECT_DIR$/account/templates/account/active_bets.html" />
+        <option value="$PROJECT_DIR$/sportbook/models.py" />
         <option value="$PROJECT_DIR$/pop_betshop.py" />
         <option value="$PROJECT_DIR$/betslip/models.py" />
-        <option value="$PROJECT_DIR$/sportbook/models.py" />
+        <option value="$PROJECT_DIR$/account/templates/account/active_bets.html" />
+        <option value="$PROJECT_DIR$/templates/sidebar.html" />
+        <option value="$PROJECT_DIR$/templates/base/css.html" />
+        <option value="$PROJECT_DIR$/templates/base/js.html" />
+        <option value="$PROJECT_DIR$/betshop/settings.py" />
+        <option value="$PROJECT_DIR$/sportbook/templates/sportbook/base.html" />
+        <option value="$PROJECT_DIR$/static/css/styles.css" />
+        <option value="$PROJECT_DIR$/betslip/views.py" />
+        <option value="$PROJECT_DIR$/static/js/ajax.js" />
+        <option value="$PROJECT_DIR$/sportbook/templates/sportbook/mlb.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="-16" />
-    <option name="width" value="1918" />
-    <option name="height" value="1045" />
+    <option name="x" value="765" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -240,6 +181,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,18 +192,46 @@
             <path>
               <item name="betshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="betshop" type="462c0819:PsiDirectoryNode" />
+              <item name="betslip" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="betshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="betshop" type="462c0819:PsiDirectoryNode" />
+              <item name="betslip" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="betshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="betshop" type="462c0819:PsiDirectoryNode" />
+              <item name="betslip" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="betslip" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="betshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="betshop" type="462c0819:PsiDirectoryNode" />
+              <item name="sportbook" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="betshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="betshop" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="betshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="betshop" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="betshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="betshop" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,14 +240,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jpb8\betshop\betshop\static" />
+      <recent name="C:\Users\jpb8\betshop\betshop\templates\account" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\jpb8\betshop\betshop\account\templates" />
       <recent name="C:\Users\jpb8\betshop\betshop\sportbook\templates" />
       <recent name="C:\Users\jpb8\betshop\betshop\templates\sportbook" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jpb8\betshop\betshop\templates\account" />
-      <recent name="C:\Users\jpb8\betshop\betshop\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -292,7 +262,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.pop_betshop">
+  <component name="RunManager" selected="Python.settings">
     <configuration name="pop_betshop" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="betshop" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -335,8 +305,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.pop_betshop" />
         <item itemvalue="Python.settings" />
+        <item itemvalue="Python.pop_betshop" />
       </list>
     </recent_temporary>
   </component>
@@ -364,6 +334,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
       <window_info id="DB Browser" order="5" weight="0.32982087" />
@@ -371,15 +342,15 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32897604" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.3278867" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3278867" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24618736" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837664" visible="true" weight="0.12961012" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3278328" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24618736" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837664" visible="true" weight="0.12961012" />
       <window_info id="Project Explorer" order="2" weight="0.32982087" />
       <window_info id="Job Explorer" order="4" weight="0.329294" />
       <window_info anchor="bottom" id="Console" order="7" />
       <window_info id="Structure" order="1" sideWeight="0.5008104" side_tool="true" weight="0.12961012" />
       <window_info id="Favorites" order="3" sideWeight="0.5008104" side_tool="true" weight="0.12961012" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978212" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39933994" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -418,33 +389,12 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/pop_betshop.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="25" />
+      <option name="time" value="27" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/mimetypes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="257" selection-start-line="257" selection-end-line="257" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sportbook/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testfk/views.py" />
     <entry file="file://$PROJECT_DIR$/testfk/models.py" />
     <entry file="file://$PROJECT_DIR$/templates/testfk/index.html" />
-    <entry file="file://$PROJECT_DIR$/templates/sidebar.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/sportbook/templates/sportbook/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -480,20 +430,7 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/school/models.py" />
-    <entry file="file://$PROJECT_DIR$/static/js/ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="71" column="65" selection-start-line="71" selection-start-column="65" selection-end-line="71" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/oddsAPI/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/oddsAPI/app.py" />
     <entry file="file://$USER_HOME$/django/djangofirst/longshots/pop_first_app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
@@ -523,13 +460,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="118" selection-start-line="8" selection-start-column="118" selection-end-line="8" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -589,13 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/betslip/templates/betslip/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="83" column="41" lean-forward="true" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/betslip/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -617,13 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sportbook/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -638,34 +554,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sportbook/templates/sportbook/base.html">
+    <entry file="file://$USER_HOME$/django/djangofirst/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="97" column="10" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sportbook/templates/sportbook/mlb.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="109" selection-start-line="50" selection-start-column="109" selection-end-line="50" selection-end-column="109" />
+        <state relative-caret-position="217">
+          <caret line="322" selection-start-line="322" selection-end-line="322" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/json/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5967">
+        <state relative-caret-position="610">
           <caret line="353" selection-start-line="353" selection-end-line="353" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account/templates/account/active_bets.html">
+    <entry file="file://$PROJECT_DIR$/pop_betshop.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        <state relative-caret-position="1071">
+          <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -679,9 +588,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/betslip/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-376">
+          <caret line="120" column="12" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/account/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
+        <state relative-caret-position="1001">
           <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
@@ -689,44 +605,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pop_betshop.py">
+    <entry file="file://$PROJECT_DIR$/sportbook/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="476">
+          <caret line="31" column="66" lean-forward="true" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/templates/account/active_bets.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base/js.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base/css.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/betshop/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="141" column="23" selection-start-line="141" selection-start-column="23" selection-end-line="141" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sidebar.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="23" column="203" lean-forward="true" selection-start-line="23" selection-start-column="203" selection-end-line="23" selection-end-column="203" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sportbook/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/betslip/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-289">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="-64">
+          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/betshop/settings.py">
+    <entry file="file://$PROJECT_DIR$/sportbook/templates/sportbook/mlb.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1034">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+        <state relative-caret-position="491">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/betslip/models.py">
+    <entry file="file://$PROJECT_DIR$/sportbook/templates/sportbook/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="143" selection-start-line="143" selection-end-line="143" />
+        <state relative-caret-position="117">
+          <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sportbook/models.py">
+    <entry file="file://$PROJECT_DIR$/betslip/templates/betslip/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="61" column="39" lean-forward="true" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
+        <state relative-caret-position="255">
+          <caret line="66" column="17" lean-forward="true" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
         </state>
       </provider>
     </entry>

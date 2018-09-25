@@ -2,6 +2,8 @@ import os
 import requests
 import json
 from decimal import *
+import pytz
+import datetime
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'betshop.settings')
 
@@ -37,7 +39,10 @@ def populate():
                 try:
                     total = Decimal(odds["TotalNumber"])
                     spread = Decimal(odds["PointSpreadHome"])
+                    date_time = datetime.datetime.strptime(g["MatchTime"], "%Y-%m-%dT%H:%M:%S")
+                    utc_date_time = date_time.replace(tzinfo=pytz.utc)
                     game, is_new = MlbGame.objects.update_or_create(game_id=g["ID"],
+                                                                    start_time=utc_date_time,
                                                                     home=g["HomeTeam"],
                                                                     away=g["AwayTeam"],
                                                                     h_sprd=odds_list[0],
@@ -51,7 +56,7 @@ def populate():
                                                                     h_score=0,
                                                                     a_score=0,
                                                                     live_status=0)
-                    print("{} => {}".format(game, is_new))
+                    print("{} => New: {}".format(game, is_new))
                 except django.db.utils.IntegrityError:
                     print("Probably a UNIQUE KEY ERROR")
         print("FINISHED")

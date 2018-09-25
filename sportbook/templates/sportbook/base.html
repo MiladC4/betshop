@@ -5,28 +5,9 @@
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
-
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+    {% include 'base/css.html' %}
 
     <title>Shop Bet</title>
-
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
 
 </head>
 <body>
@@ -110,7 +91,6 @@
     {% endif %}
 </div>
 
-
 {% block body_block %}
 
 {% endblock %}
@@ -122,81 +102,9 @@
     </div>
 </div>
 
+{% include 'base/js.html' %}
+
 <script>
-    $(document).ready(function(){
-        var betForm = $(".form-betslip-ajax")
-
-        betForm.submit(function(event){
-            event.preventDefault();
-            console.log("form did not send")
-            var thisForm = $(this)
-            var actionEndpoint = thisForm.attr("action");
-            var httpMethod = thisForm.attr("method");
-            var formData = thisForm.serialize();
-
-            $.ajax({
-                url: actionEndpoint,
-                method: httpMethod,
-                data: formData,
-                success: function(data){
-                    var slipOdds = $(".betslip-span")
-                    slipOdds.text(data.slipOdds + " $" + data.slipDue)
-                },
-                error: function(errorData){
-                    console.log(errorData)
-                }
-            })
-        })
-
-        var betForm = $(".form-parley-ajax");
-
-        betForm.submit(function(event){
-            event.preventDefault();
-            var thisForm = $(this);
-            var actionEndpoint = thisForm.attr("action");
-            var httpMethod = thisForm.attr("method");
-            var formData = thisForm.serialize();
-
-            $.ajax({
-                url: actionEndpoint,
-                method: httpMethod,
-                data: formData,
-                dataType: 'json',
-                success: function(data){
-                    var slipOdds = $(".betslip-span")
-                    var options, index, select, option;
-
-                    slipOdds.text(data.slipOdds + " $" + data.slipDue);
-                    select = document.getElementById('bet_id');
-                    select.options.length = 0;
-
-                    dataBet = JSON.parse(data.oddsRemain); // Or whatever source information you're working with
-                    for (i = 0; i < dataBet.length; i++) {
-                        option = dataBet[i];
-                        select.options.add(new Option(option.fields.price, option.pk));
-                    };
-
-                    dataSlipBets = JSON.parse(data.slipBets);
-                    var slipTableHtml = ""
-                    var tableBet, table, betNumb
-                    table = document.getElementById('slip-table-body')
-                    for (i = 0; i < dataSlipBets.length; i++) {
-                        betNumb = i + 1
-                        tableBet = dataSlipBets[i]
-                        slipTableHtml += "<tr><th scope='row'>" + betNumb +"</th><td><a href='#'>" + tableBet.fields.home + ": " + tableBet.fields.type + "</a></td><td>" + tableBet.fields.price + "</td></tr>"
-                        $('#slip-table-body').html(slipTableHtml)
-                    };
-
-                },
-                error: function(errorData){
-                    console.log(errorData)
-                }
-            });
-        });
-
-
-    });
-
 
 </script>
 

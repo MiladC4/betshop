@@ -1,42 +1,33 @@
+#bets {
 
+}
 
-        #top-jumbo {
+#top-jumbo {
+    background-image:url("https://images.pexels.com/photos/325658/pexels-photo-325658.jpeg?auto=compress&cs=tinysrgb&h=350");
+    background-color:#FFF8DC;
+}
 
-            background-image:url("https://images.pexels.com/photos/325658/pexels-photo-325658.jpeg?auto=compress&cs=tinysrgb&h=350");
-            background-color:#FFF8DC;
-        }
+#disp-4 {
+    font-size:300%;
+    font-weight:bold;
+    color:#F8F8FF;
+}
 
-        #disp-4 {
+#lead {
+    font-size:150%;
+    font-weight:bold;
+    color:#F8F8FF;
+}
 
-            font-size:300%;
-            font-weight:bold;
-            color:#F8F8FF;
+#top-jumbo {
+    margin-top:20px;
+}
 
-        }
+.jumbo-text {
+    font-size:125%;
+    color:#F8F8FF;
+}
 
-        #lead {
-
-            font-size:150%;
-            font-weight:bold;
-            color:#F8F8FF;
-
-        }
-
-        #top-jumbo {
-
-            margin-top:20px;
-
-        }
-
-        .jumbo-text {
-
-            font-size:125%;
-            color:#F8F8FF;
-        }
-
-        .emp-button {
-
-            margin-left:3px !important;
-
-
-        }
+.emp-button {
+    margin-left:3px !important;
+}

@@ -54,11 +54,13 @@ def slip_update(request):
         request.session['slip_odds'] = str(round(slip_obj.divider, 2))
         request.session['slip_due'] = str(round(slip_obj.due, 2))
     if request.is_ajax:
+        bets = serialize('json', slip_obj.odds.all())
         json_data = {
             "added": added,
             "removed": not added,
             "slipOdds": str(round(slip_obj.divider, 2)),
             "slipDue": str(round(slip_obj.due, 2)),
+            "slipBets": bets,
         }
         return JsonResponse(json_data)
     return redirect('betslip:home')
@@ -78,7 +80,7 @@ def parley_update(request):
         request.session['slip_due'] = str(round(slip_obj.due, 2))
         if request.is_ajax:
             min_price = slip_obj.calc_min_price()
-            odds_list = serialize('json', MlbOdds.objects.filter(price__gte=min_price))
+            odds_list = serialize('json', MlbOdds.objects.filter(price__gte=min_price, live_status=0))
             bets = serialize('json', slip_obj.odds.all())
             json_data = {
                 "added": added,

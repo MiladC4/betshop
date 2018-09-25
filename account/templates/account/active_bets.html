@@ -10,11 +10,11 @@
             <th scope="col">Odds</th>
             <th scope="col">Total</th>
         </thead>
-        {% for odd in bets.odds.all %}
+        {% for odd in bets.betvalue_set.all %}
         <tr>
-            <td>{{ odd }}</td>
-            <td>{{ odd.price }}</td>
-            <td></td>
+            <td>{{ odd.odd }}</td>
+            <td>{{ odd.odd.price }}</td>
+            <td>{{ odd.value }}</td>
         </tr>
         {% endfor %}
         <tr>
